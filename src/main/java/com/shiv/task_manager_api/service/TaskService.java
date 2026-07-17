@@ -58,7 +58,7 @@ public class TaskService {
       else {
              taskPage = taskRepository.findByUser(user, pageable);
 }
-        return taskPage.map(task -> modelMapper.map(page,TaskResponseDTO.class));
+        return taskPage.map(task -> modelMapper.map(task,TaskResponseDTO.class));
     }
 
     public TaskResponseDTO getTaskById(Long id){
