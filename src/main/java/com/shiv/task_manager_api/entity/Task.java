@@ -14,6 +14,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import java.util.List;
 import jakarta.persistence.ManyToOne;
@@ -41,7 +42,7 @@ public class Task {
     @Size(min=5,max=500)
     private String description;
 
-    @NotBlank(message ="Status should not be empty")
+    @NotNull(message ="Status should not be empty")
     @Enumerated(EnumType.STRING)
     private TaskStatus status;
     
